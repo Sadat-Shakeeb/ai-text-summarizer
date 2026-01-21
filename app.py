@@ -33,7 +33,8 @@ st.sidebar.markdown(
 # =========================
 @st.cache_resource
 def load_model():
-    MODEL_ID = "Sadat-Shakeeb/t5-text-summarizer"
+    MODEL_ID = "shakeeb08/t5-text-summarizer"
+
 
     tokenizer = T5TokenizerFast.from_pretrained(MODEL_ID)
     model = T5ForConditionalGeneration.from_pretrained(MODEL_ID)
