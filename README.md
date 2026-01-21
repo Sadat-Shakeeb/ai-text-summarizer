@@ -1,157 +1,140 @@
-```md
-# 📝 T5 AI Summarizer
+# T5 AI Summarizer
 
-A web-based **text summarization application** built using a fine-tuned **T5 Transformer model**, deployed live with **Streamlit Cloud** and hosted model artifacts on **Hugging Face Hub**.
+A lightweight web application for abstractive text summarization, powered by a fine-tuned T5 model. The app is built with Streamlit and fetches model artifacts from the Hugging Face Hub so the repository only contains source code (no model weights).
 
-🔗 **Live Demo:**  
-👉 https://t5-aisummarizer.streamlit.app/
-
----
-
-## 📌 Project Overview
-
-This project provides an **abstractive text summarization system** capable of generating **short or detailed summaries** for:
-
-- Conversations and dialogues (best performance)
-- Chats, emails, meeting transcripts
-- General text and short articles
-
-The model is fine-tuned on conversational data and exposed through a clean, user-friendly Streamlit interface.
+Live demo: https://t5-aisummarizer.streamlit.app/  
+Model on Hugging Face: https://huggingface.co/shakeeb08/t5-text-summarizer
 
 ---
 
-## 🚀 Features
+## Overview
 
-- ✨ Abstractive text summarization using **T5**
-- 🔄 Supports **Short** and **Detailed** summaries
-- ⚡ Fast loading with Streamlit caching
-- ☁️ Deployed live on **Streamlit Cloud**
-- 📦 Model hosted on **Hugging Face Hub** (no large files in GitHub)
-- 🧠 Optimized for conversational text (SAMSum-style data)
+This project provides a user-friendly interface to generate concise or detailed summaries for conversational data and short-form text. The model was fine-tuned on conversational summarization data (SAMSum-style), which makes it especially effective on dialogues, chats, meeting transcripts, and emails.
 
----
-
-## 🧠 Model Details
-
-- **Model Architecture:** T5 (Text-to-Text Transformer)
-- **Task:** Abstractive Text Summarization
-- **Tokenizer:** SentencePiece
-- **Model Hosting:** Hugging Face Hub  
-  👉 https://huggingface.co/shakeeb08/t5-text-summarizer
+Key capabilities:
+- Abstractive summarization (T5)
+- Two summary modes: Short and Detailed
+- Fast inference with caching in Streamlit
+- Deployed on Streamlit Cloud with model hosted on Hugging Face Hub
 
 ---
 
-## 🏗️ System Architecture
+## Features
+
+- Abstractive summarization using a fine-tuned T5 model
+- Short and Detailed summary options
+- Clean, minimal Streamlit UI for easy interaction
+- Automatic download of model/tokenizer from Hugging Face on first run
+- Optimized for dialogue-style inputs
+
+---
+
+## Model Details
+
+- Architecture: T5 (Text-to-Text Transformer)
+- Tokenizer: SentencePiece
+- Fine-tuned dataset: Conversational summarization (SAMSum-style)
+- Model hub: [shakeeb08/t5-text-summarizer](https://huggingface.co/shakeeb08/t5-text-summarizer)
+
+---
+
+## Repository Structure
 
 ```
-
-User
-↓
-Streamlit Web App
-↓
-Hugging Face Transformers
-↓
-T5 Model (Hosted on Hugging Face Hub)
-
-```
-
-- **GitHub:** Source code only
-- **Hugging Face Hub:** Model weights & tokenizer
-- **Streamlit Cloud:** Live deployment
-
----
-
-## 🖥️ User Interface
-
-- Text input area for dialogue or text
-- Summary style selector:
-  - **Short** – concise overview
-  - **Detailed** – more informative summary
-- Output displayed in a clean, readable format
-
-💡 *Best results are obtained with conversational or dialogue-style text.*
-
----
-
-## 📂 Repository Structure
-
-```
-
 ai-text-summarizer/
 ├── app.py
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
-````
-
-> ⚠️ Model files are intentionally **not included** in this repository.
-
----
-
-## 🛠️ Tech Stack
-
-- **Python**
-- **Streamlit**
-- **PyTorch**
-- **Hugging Face Transformers**
-- **SentencePiece**
-- **Hugging Face Hub**
+Note: Model weights and tokenizer files are hosted on Hugging Face and are not included in this repository.
 
 ---
 
-## ⚙️ Installation (Run Locally)
+## Quick Start (Run locally)
 
+1. Clone the repository
 ```bash
 git clone https://github.com/Sadat-Shakeeb/ai-text-summarizer.git
 cd ai-text-summarizer
+```
+
+2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
+
+3. Launch the app
+```bash
 streamlit run app.py
-````
+```
 
-> The model will be downloaded automatically from Hugging Face Hub on first run.
+The app will download the model and tokenizer from the Hugging Face Hub the first time it runs. If the model is private, set your Hugging Face token in the environment before running:
 
----
-
-## 🌐 Live Deployment
-
-The application is deployed using **Streamlit Cloud**:
-
-🔗 [https://t5-aisummarizer.streamlit.app/](https://t5-aisummarizer.streamlit.app/)
-
-No authentication is required to use the app.
-
----
-
-## 📈 Future Improvements
-
-* File upload support (TXT / PDF)
-* Automatic language detection
-* Model upgrade (T5-base / T5-large)
-* Summary history & export
-* UI enhancements and analytics
-
----
-
-## 👤 Author
-
-**Sadat Shakeeb**
-📌 Machine Learning & NLP Enthusiast
-
-* GitHub: [https://github.com/Sadat-Shakeeb](https://github.com/Sadat-Shakeeb)
-* Hugging Face: [https://huggingface.co/shakeeb08](https://huggingface.co/shakeeb08)
-
----
-
-## 📄 License
-
-This project is for educational and demonstration purposes.
-
+```bash
+export HUGGINGFACE_HUB_TOKEN="hf_xxx"
 ```
 
 ---
 
+## Usage
 
+- Paste or type a dialogue, chat log, email, or short article into the text input.
+- Select summary style:
+  - Short — concise one-sentence overview or brief paragraph.
+  - Detailed — longer, more informative summary that captures key points.
+- Click the button to generate the summary; result will appear in the output panel.
 
-Just tell me 👍
-```
+Tips for best results:
+- Provide clear speaker labels in conversations when possible.
+- Break very long documents into sections and summarize individually.
+
+---
+
+## Deployment
+
+The application is deployed on Streamlit Cloud:
+
+- Live demo: https://t5-aisummarizer.streamlit.app/
+
+Model artifacts (weights & tokenizer): hosted on Hugging Face Hub at [shakeeb08/t5-text-summarizer](https://huggingface.co/shakeeb08/t5-text-summarizer).
+
+---
+
+## Roadmap / Future Improvements
+
+Potential enhancements:
+- File upload support (TXT / PDF)
+- Automatic language detection
+- Upgrade to T5-base or T5-large for quality improvements
+- Summary history, export options (CSV / TXT)
+- UI/UX enhancements and usage analytics
+- Batch summarization and API endpoint
+
+---
+
+## Contributing
+
+Contributions, suggestions, and bug reports are welcome. To contribute:
+1. Fork the repository.
+2. Create a feature branch.
+3. Open a pull request describing your changes.
+
+Please include tests or a short demo where applicable.
+
+---
+
+## License & Intended Use
+
+This project is provided for educational and demonstration purposes. If you plan to use the model in production, evaluate model behavior carefully and review the license and model card on Hugging Face.
+
+---
+
+## Author
+
+Sadat Shakeeb — Machine Learning & NLP Enthusiast  
+- GitHub: https://github.com/Sadat-Shakeeb  
+- Hugging Face: https://huggingface.co/shakeeb08
+
+---
