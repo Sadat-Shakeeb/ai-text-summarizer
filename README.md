@@ -9,7 +9,7 @@ Model on Hugging Face: https://huggingface.co/shakeeb08/t5-text-summarizer
 
 ## Overview
 
-This project provides a user-friendly interface to generate concise or detailed summaries for conversational data and short-form text. The model was fine-tuned on conversational summarization data (SAMSum-style), which makes it especially effective on dialogues, chats, meeting transcripts, and emails.
+This project provides a user-friendly interface to generate concise or detailed summaries for conversational data and short-form text. The model was fine-tuned on conversational summarization data (SAMSum-style), which makes it especially effective on dialogues, chats, meeting transcripts, and emails
 
 Key capabilities:
 - Abstractive summarization (T5)
