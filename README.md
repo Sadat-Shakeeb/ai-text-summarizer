@@ -5,7 +5,7 @@ A lightweight web application for abstractive text summarization, powered by a f
 Live demo: https://t5-aisummarizer.streamlit.app/  
 Model on Hugging Face: https://huggingface.co/shakeeb08/t5-text-summarizer
 
----
+----
 
 ## Overview
 
